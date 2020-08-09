@@ -16,13 +16,13 @@ export const CartDropdownContainer = styled.div`
     z-index: 5;
 `;
 
+export const CartDropdownButton = styled(CustomButton)`
+    margin-top: auto;
+`;
+
 export const CartDropdownItemContainer = styled.div`
     height: 240px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
-`;
-
-export const CartDropdownButton = styled(CustomButton)`
-    margin-top: auto;
 `;
