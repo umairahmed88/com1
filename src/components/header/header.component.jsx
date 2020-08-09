@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { auth } from '../../firebase/firebase.utils';
 
@@ -12,7 +14,7 @@ import {
     OptionsLink
 } from './header.styles';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
             <Logo />
@@ -26,12 +28,15 @@ const Header = ({ currentUser }) => (
                 :
                 <OptionsLink to='/signin'>Sign In</OptionsLink>
             }
+            <CartIcon />
         </OptionsContainer>
+        {hidden ? null : <CartDropdown />}
     </HeaderContainer>
 );
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
-})
+const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
+    currentUser,
+    hidden
+});
 
 export default connect(mapStateToProps)(Header);
