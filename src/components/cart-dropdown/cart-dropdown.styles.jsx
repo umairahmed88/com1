@@ -26,3 +26,8 @@ export const CartDropdownItemContainer = styled.div`
     flex-direction: column;
     overflow: scroll;
 `;
+
+export const EmptyMessageSpan = styled.span`
+    fonet-size: 18px;
+    margin: 50px auto;
+`;
