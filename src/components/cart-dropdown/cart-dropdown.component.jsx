@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import CartItem from '../cart-item/cart-item.component';
 
 import {
     CartDropdownContainer,
@@ -6,11 +8,19 @@ import {
     CartDropdownButton
 } from './cart-dropdown.styles';
 
-const CartDropdown = () => (
+const CartDropdown = ({ cartItems }) => (
     <CartDropdownContainer>
         <CartDropdownItemContainer />
+        {
+            cartItems.map(cartItem => (
+            <CartItem key={cartItem.id} item={cartItem}/>
+            ))}
         <CartDropdownButton>Go To Checkout</CartDropdownButton>
     </CartDropdownContainer>
 );
 
-export default CartDropdown;
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+    cartItems
+});
+
+export default connect(mapStateToProps)(CartDropdown);
