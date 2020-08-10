@@ -25,7 +25,7 @@ export const TextContainer = styled.span`
 `;
 
 export const QuantitySpan = styled(TextContainer)`
-    padding-left: 20px;
+    display: flex;
 
     span {
         margin: 0 10px;
