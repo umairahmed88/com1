@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const CheckoutPageContainer = styled.div`
     width: 55%;
     min-height: 90vh;
@@ -30,4 +31,11 @@ export const CheckoutTotalContainer = styled.div`
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+`;
+
+export const WarningText = styled.div`
+    text-align: center;
+    margin-top: 40px;
+    font-size: 24px;
+    color: red;
 `;
